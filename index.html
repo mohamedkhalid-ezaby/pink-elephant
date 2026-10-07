@@ -217,4 +217,85 @@
         footer {
             text-align: center;
             padding: 30px;
-            margin-top: 40
+            margin-top: 40px;
+            color: #888;
+            font-size: 13px;
+            border-top: 1px solid #eee;
+        }
+
+        /* استجابة للهواتف (Responsive) */
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+                justify-content: center;
+            }
+            .nav-links {
+                display: none; /* إخفاء الروابط في الموبايل للتبسيط */
+            }
+            .hero-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر العلوي -->
+    <header>
+        <a href="#" class="header-logo">The Pink Elephant</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#branches">Locations</a>
+            <a href="#social">Connect</a>
+        </div>
+    </header>
+
+    <!-- قسم البطل والخلفية -->
+    <div class="hero-section" id="home">
+        <img src="535270349_1071302801782439_1170105978841208922_n.jpg" alt="The Pink Elephant Logo" class="floating-logo">
+        <h1 class="hero-title">The Pink Elephant</h1>
+        <div class="hero-subtitle">Discover Our World</div>
+    </div>
+
+    <!-- المحتوى الرئيسي (الفروع والسوشيال ميديا) -->
+    <div class="main-content">
+        
+        <h2 class="section-title" id="branches">Our Branches</h2>
+        
+        <div class="branches">
+            <div class="branch-card">
+                <h3>Heliopolis</h3>
+                <p>110 Omar Ibn El-Khattab St.</p>
+            </div>
+            <div class="branch-card">
+                <h3>Arkan Mall</h3>
+                <p>Sheikh Zayed - 6th of October</p>
+            </div>
+            <div class="branch-card">
+                <h3>Almaza Mall / Bay</h3>
+                <p>North Coast</p>
+            </div>
+            <div class="branch-card">
+                <h3>Madinaty</h3>
+                <p>Open Air Mall</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="social">Get In Touch</h2>
+
+        <div class="social-section">
+            <div class="social-links">
+                <a href="https://www.facebook.com/thepinkelephantegypt/" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/thepinkelephantegypt/" target="_blank">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        &copy; 2026 The Pink Elephant. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
