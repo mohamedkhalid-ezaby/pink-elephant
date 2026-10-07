@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pink Elephant</title>
+    <!-- استدعاء خطوط أنيقة من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* إعدادات عامة */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdf5f6; /* لون خلفية ناعم جداً */
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر العلوي الاحترافي */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            box-shadow: 0 2px 15px rgba(216, 27, 96, 0.08);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .header-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #d81b60;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d81b60;
+        }
+
+        /* قسم البطل (الخلفية والصورة المتحركة) */
+        .hero-section {
+            background: linear-gradient(135deg, #ffe4e1 0%, #ffc0cb 100%);
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px; /* لتعويض ارتفاع الهيدر الثابت */
+            position: relative;
+        }
+
+        .floating-logo {
+            width: 250px;
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0px 15px 20px rgba(216, 27, 96, 0.2));
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #d81b60;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* تأثير الطفو */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* حاوية الفروع والروابط */
+        .main-content {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: -60px auto 0; /* رفع المحتوى قليلاً فوق قسم البطل */
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            color: #d81b60;
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        /* تنسيق كروت الفروع (باللغة الإنجليزية) */
+        .branches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .branch-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 15px;
+            border: 1px solid #ffeff1;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(216, 27, 96, 0.03);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* خط علوي جمالي لكل كارت */
+        .branch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .branch-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(216, 27, 96, 0.1);
+        }
+
+        .branch-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .branch-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .branch-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* أزرار التواصل الاجتماعي الاحترافية */
+        .social-section {
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 35px;
+            background: linear-gradient(135deg, #d81b60 0%, #ad144b 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 15px rgba(216, 27, 96, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(216, 27, 96, 0.4);
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40
